@@ -1,3 +1,7 @@
+# 📢 Context! 
+
+Below is a coding challenge that I found. I used a swarm of agents to solve the problem with a few back-and-forth interactions to set the architecture, clean up the code, and audit for best practices and security vulnerabilities. Using agentic AI was very much *not* in the spirit of the original challenge, but was excellent practice for interacting with subagents, remote coding sessions, and general modern agentic development. It even mostly works! 
+
 # Item Challenge
 
 Welcome! This is a take-home coding assignment for a software engineering position. In this challenge, you'll be building a simplified version of an exam item management API with cloud infrastructure.
