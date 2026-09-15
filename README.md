@@ -1,6 +1,26 @@
-# 📢 Context! 
+# 📢 Context 📢 
 
 Below is a coding challenge that I found. I used a swarm of agents to solve the problem with a few back-and-forth interactions to set the architecture, clean up the code, and audit for best practices and security vulnerabilities. Using agentic AI was very much *not* in the spirit of the original challenge, but was excellent practice for interacting with subagents, remote coding sessions, and general modern agentic development. It even mostly works! 
+
+## Session summary
+### Models
+
+| Phase | Model |
+|---|---|
+| Initial 3-way parallel implementation, most Q&A, final git/fork/PR work | **Sonnet 5** (`claude-sonnet-5`) |
+| `/simplify` cleanup pass onward through the security review, bug fixes, and diagrams | **Opus 5** (`claude-opus-5`) |
+
+T
+### Agents — 9 subagents spawned, all background
+
+| Wave | Agents | Combined subagent tokens | Wall time (sum, mostly parallel) |
+|---|---|---|---|
+| Implementation (parallel) | API handlers, CDK infra, DynamoDB storage | 364,783 | 20.3 min |
+| `/simplify` review (parallel) | Reuse, Simplification, Efficiency, Altitude | 394,989 | 7.3 min |
+| Security review (sequential) | Vuln identification, false-positive filter | 181,465 | 3.8 min |
+
+**Total: 941,237 subagent tokens, 196 tool calls, ~31.3 min of measured agent compute** (heavily parallelized, so wall-clock was much less).
+
 
 # Item Challenge
 
