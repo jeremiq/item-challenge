@@ -77,6 +77,14 @@ export class MemoryStorage implements ItemStorage {
 
     const total = items.length;
 
+    // Newest first, tie-broken by descending id — matches the ordering the
+    // DynamoDB backend gets from reading `<lastModified>#<id>` in reverse.
+    // Without this the two backends disagree: Map iteration is creation order.
+    items.sort(
+      (a, b) =>
+        b.metadata.lastModified - a.metadata.lastModified || b.id.localeCompare(a.id)
+    );
+
     // Pagination
     const offset = query.offset || 0;
     const limit = query.limit || 10;

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "declaration": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": ["./node_modules/@types"],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    // Typecheck only: CDK runs the app through ts-node (see cdk.json) and
+    // esbuild bundles the Lambda adapters, so nothing consumes emitted JS.
+    // Without an emit there's no rootDir to violate, which lets the adapters
+    // import the handlers in ../src and have those imports actually checked.
+    "noEmit": true
+  },
+  "exclude": ["node_modules", "cdk.out", "dist"]
+}
