@@ -1,0 +1,29 @@
+{
+  "name": "item-challenge-infrastructure",
+  "version": "1.0.0",
+  "description": "AWS CDK (TypeScript) infrastructure for the item-challenge exam item management API",
+  "private": true,
+  "bin": {
+    "item-challenge": "bin/item-challenge.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.163",
+    "@types/node": "^20.14.9",
+    "aws-cdk": "^2.1141.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.269.0",
+    "constructs": "^10.8.1",
+    "source-map-support": "^0.5.21"
+  }
+}
